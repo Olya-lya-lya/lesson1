@@ -30,5 +30,9 @@ const test = "12.2px";
 console.log(parseInt(test));
 console.log(parseFloat(test));
 
+const example = "test   ";
+console.log(example.trim());
+
+
 
 
