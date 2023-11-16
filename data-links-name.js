@@ -13,7 +13,7 @@ const obj = {
     b: 1
 };
 
-const copy = obj; //ссылка
+const copy = obj; //не значения объекта , а ссылка!!!
 
 copy.a = 10;
 console.log(copy);
@@ -37,8 +37,59 @@ const numbers = {
     }
 };
 
-const newNumbers = copy2(numbers);
+//const newNumbers = copy2(numbers);
 
-newNumbers.a = 10;
-console.log(newNumbers);
-console.log(numbers);
+//newNumbers.a = 10;
+//console.log(newNumbers);
+//console.log(numbers);
+
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+//console.log(Object.assign(numbers, add));
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+
+//console.log(add);
+//console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice(); // позволяет скопировать массив 
+
+newArray[1] = 'hihihih';
+console.log(oldArray);
+console.log(newArray);
+
+//оператор разворота spread
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+function log (a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];
+
+console.log(...num);
+
+
+const array = ['a', 'b'];
+
+const newarray = [...array];
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
